@@ -1,0 +1,37 @@
+{
+  "name": "timernotes",
+  "version": "0.0.1",
+  "description": "Timernotes are just like regular notes but have a timer inside.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config=config/webpack.dev.js --mode development --open --hot",
+    "build": "webpack --config=config/webpack.build.js --mode production"
+  },
+  "author": "Viktor Kishankov",
+  "license": "LicenseRef-LICENSE",
+
+  "dependencies": {
+    "react": "16.2.0",
+    "react-dom": "16.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.4",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-react-hmre": "1.1.1",
+    "clean-webpack-plugin": "0.1.19",
+    "css-loader": "0.28.11",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "file-loader": "1.1.11",
+    "html-webpack-plugin": "3.1.0",
+    "less": "3.0.1",
+    "less-loader": "4.1.0",
+    "postcss-loader": "2.1.3",
+    "style-loader": "0.20.3",
+    "webpack": "4.4.0",
+    "webpack-cli": "2.0.13",
+    "webpack-dev-server": "3.1.1"
+  }
+}
