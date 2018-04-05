@@ -9,7 +9,6 @@
   },
   "author": "Viktor Kishankov",
   "license": "LicenseRef-LICENSE",
-
   "dependencies": {
     "react": "16.2.0",
     "react-dom": "16.2.0"
@@ -22,6 +21,7 @@
     "babel-preset-react": "6.24.1",
     "babel-preset-react-hmre": "1.1.1",
     "clean-webpack-plugin": "0.1.19",
+    "copy-webpack-plugin": "4.5.1",
     "css-loader": "0.28.11",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "1.1.11",

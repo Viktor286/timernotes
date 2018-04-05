@@ -1,6 +1,7 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 function $root(target){
   return path.resolve(__dirname, '../', target);
@@ -12,7 +13,8 @@ module.exports = {
   },
   output: {
     path: $root('./app'),
-    filename: '[name]_bundle_[hash:8].js'
+    filename: '[name]_bundle_[hash:8].js',
+    // publicPath: '/assets/'
   },
   devServer: {
     // contentBase: path.join(__dirname, "app"),
@@ -52,6 +54,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: $root('./src/html-templates/basic-template.html'),
       filename: 'index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: $root('./src/assets/'),
+        to: 'assets',
+        toType: 'dir'
+      }
+    ])
   ]
 };

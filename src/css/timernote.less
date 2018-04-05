@@ -1,0 +1,77 @@
+// Timernotes colors
+@time-passed: #88a9cf;
+@time-await: #7c7c7c;
+
+
+section.timenote {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    /*max-width: 750px;*/
+    margin: .2em;
+
+    border-bottom: 1px #2e2e2e solid;
+    border-radius: 5px;
+    background: @dark-background;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+div.timenote__main-aside {
+    flex: 1 0 auto;
+}
+
+div.timenote__main {
+    flex: 10 0 auto;
+}
+
+div.timenote__control-dragger {
+    flex: 1 0 auto;
+}
+
+
+
+div.timenote__logotype {
+    display: flex;
+    flex-direction: row;
+
+    width: 5rem;
+    height: 5rem;
+
+    transition: all .08s ease-in-out;
+
+    border: 1px #282828 solid;
+    border-radius: 50%;
+    background-color: #1d1d1d;
+
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: baseline;
+}
+
+div.timenote__logotype div.icon {
+    width: 75%;
+    height: 75%;
+    margin: 0 0 5% 0;
+
+    transition: all .08s ease;
+
+    fill: #333;
+}
+
+div.timenote__logotype:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+div.timenote__title {
+    color: @normal-title-light;
+
+    font-size: 2.25rem;
+    font-weight: 100;
+}

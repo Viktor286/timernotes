@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-    
-class App extends Component {
+import NotesStack from '../components/NotesStack';
+
+export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>React!</h1>
-        <div className="link">Link</div>
+        <NotesStack />
       </div>
     );
   }
 }
-
-export default App;

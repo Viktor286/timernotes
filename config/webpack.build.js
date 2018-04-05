@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextCSS = new ExtractTextPlugin('css/[name]_[hash:8].css');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 function $root(target){
   return path.resolve(__dirname, '../', target);
@@ -113,7 +114,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: $root('./src/html-templates/basic-template.html'),
       filename: 'index.html'
-    }
-    )
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: $root('./src/assets/'),
+        to: 'assets',
+        toType: 'dir'
+      }
+    ])
   ]
 };
