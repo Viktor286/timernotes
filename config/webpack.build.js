@@ -13,15 +13,15 @@ function $root(target){
 
 module.exports = {
   entry: {
-    main: $root('./src/main.js'),
+    main: $root('./src/index.js'),
     babel_polyfill: [
       'babel-polyfill'
     ],
     react: [
       'react',
-      'react-dom'
-      // 'redux',
-      // 'react-redux',
+      'react-dom',
+      'redux',
+      'react-redux',
       // 'redux-thunk',
       // 'prop-types',
       // 'reselect'

@@ -1,16 +1,39 @@
 import React, { Component } from 'react';
+
+import {connect} from 'react-redux';
 import Timernote from '../components/Timernote';
 
-export default class NotesStack extends Component {
+
+class NotesStack extends Component {
+  constructor() {
+    super();
+  }
+
+  renderStack() {
+    return this.props.timerNotesTotal.map((timerNote) => {
+      return (
+          <Timernote
+            key={timerNote.id}
+            timernote={timerNote}
+          />
+      );
+    });
+  }
 
   render() {
     return (
       <section className="timenotes-stack">
-          <Timernote />
-          <Timernote />
-          <Timernote />
+        {this.renderStack()}
       </section>
     );
   }
 
 }
+
+function mapStateToProps(state) {
+  return {
+    timerNotesTotal: state.timerNotesTotal
+  };
+}
+
+export default connect(mapStateToProps)(NotesStack);

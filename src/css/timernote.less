@@ -2,38 +2,56 @@
 @time-passed: #88a9cf;
 @time-await: #7c7c7c;
 
+@tm-aside-width: 100px;
+@tm-control-dragger: 55px;
 
 section.timenote {
-    display: flex;
-    flex-direction: row;
+    position: relative;
+
+    overflow: hidden;
 
     width: 100%;
+    min-height: 100px;
     /*max-width: 750px;*/
     margin: .2em;
 
     border-bottom: 1px #2e2e2e solid;
     border-radius: 5px;
     background: @dark-background;
-
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
 }
 
 div.timenote__main-aside {
-    flex: 1 0 auto;
+    position: absolute;
+
+    overflow: hidden;
+
+    width: @tm-aside-width;
+    height: 100%;
+
+    //background-color: #2e2830;
 }
 
 div.timenote__main {
-    flex: 10 0 auto;
+    position: absolute;
+    left: @tm-aside-width;
+    width: calc(100% - (@tm-aside-width + @tm-control-dragger));
+    overflow: hidden;
+
+    height: 100%;
+    //background-color: #523d5b;
 }
 
 div.timenote__control-dragger {
-    flex: 1 0 auto;
+    position: absolute;
+    right: 0;
+
+    overflow: hidden;
+
+    width: @tm-control-dragger;
+    height: 100%;
+
+    //background-color: #2e2830;
 }
-
-
 
 div.timenote__logotype {
     display: flex;
@@ -51,7 +69,7 @@ div.timenote__logotype {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    align-content: baseline;
+    align-content: center;
 }
 
 div.timenote__logotype div.icon {
@@ -70,6 +88,8 @@ div.timenote__logotype:hover {
 }
 
 div.timenote__title {
+    text-align: center;
+
     color: @normal-title-light;
 
     font-size: 2.25rem;

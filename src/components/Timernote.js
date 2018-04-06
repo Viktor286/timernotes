@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 
 export default class Timernote extends Component {
+  constructor() {
+    super();
+  }
 
   render() {
+    const { title, description } = this.props.timernote;
+
     return (
       <section className="timenote dark-theme">
 
@@ -22,7 +27,7 @@ export default class Timernote extends Component {
         </div>
 
         <div className="timenote__main">
-          <div className="timenote__title">timenote component</div>
+          <div className="timenote__title">{title}</div>
           <div className="timenote__progress-bar">
 
           </div>

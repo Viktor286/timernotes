@@ -9,7 +9,7 @@ function $root(target){
 
 module.exports = {
   entry: {
-    main: $root('./src/main.js')
+    main: $root('./src/index.js')
   },
   output: {
     path: $root('./app'),
