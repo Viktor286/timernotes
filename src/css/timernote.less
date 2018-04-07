@@ -1,97 +1,222 @@
 // Timernotes colors
-@time-passed: #88a9cf;
-@time-await: #7c7c7c;
+@time-passed-text: #768ba5;
+@time-await-text: #626262;
+@cycle-state-text: #414141;
 
-@tm-aside-width: 100px;
-@tm-control-dragger: 55px;
+@controls-primary-width: 115px;
+@controls-secondary-width: 75px;
+@controls-margins-sum: calc(@controls-primary-width + @controls-secondary-width);
 
-section.timenote {
-    position: relative;
+@timer-state-info: 6%;
 
-    overflow: hidden;
+@icon-gray: #333;
+@icon-light: #4b4b4b;
+@progress-bar-inactive: #343434;
+@progress-bar-blue: #60a2ed;
 
-    width: 100%;
-    min-height: 100px;
-    /*max-width: 750px;*/
-    margin: .2em;
+@implicit-tone: #232323;
+@implicit-tone-hover-blue: #2b3240;
 
-    border-bottom: 1px #2e2e2e solid;
-    border-radius: 5px;
-    background: @dark-background;
+section.timernote {
+  position: relative;
+
+  width: 100%;
+  min-height: 110px;
+  /*max-width: 750px;*/
+  margin: .65em 0;
+
+  transition: all .1s ease-out;
+
+  border-bottom: 1px #2e2e2e solid;
+  border-radius: 5px;
+  background: @dark-background;
 }
 
-div.timenote__main-aside {
-    position: absolute;
+//section.timernote:hover{
+//  transform: scale(1.035);
+//}
 
-    overflow: hidden;
+.controls-primary {
+  position: absolute;
 
-    width: @tm-aside-width;
-    height: 100%;
+  width: @controls-primary-width;
+  height: 100%;
 
-    //background-color: #2e2830;
+  text-align: center;
+  //border: 1px dashed fuchsia;
 }
 
-div.timenote__main {
-    position: absolute;
-    left: @tm-aside-width;
-    width: calc(100% - (@tm-aside-width + @tm-control-dragger));
-    overflow: hidden;
+.timernote-body {
+  position: absolute;
+  left: @controls-primary-width;
 
-    height: 100%;
-    //background-color: #523d5b;
+  overflow: hidden;
+
+  width: calc(100% - @controls-margins-sum);
+  height: 100%;
+  //background-color: #523d5b;
 }
 
-div.timenote__control-dragger {
-    position: absolute;
-    right: 0;
+.controls-secondary {
+  position: absolute;
+  right: 0;
 
-    overflow: hidden;
+  width: @controls-secondary-width;
+  height: 100%;
 
-    width: @tm-control-dragger;
-    height: 100%;
-
-    //background-color: #2e2830;
+  //background-color: #2e2830;
 }
 
-div.timenote__logotype {
-    display: flex;
-    flex-direction: row;
 
-    width: 5rem;
-    height: 5rem;
+.logotype-btn {
+  //margin: 8% auto 0;
+  position: relative;
+  top: 10px;
 
-    transition: all .08s ease-in-out;
+  width: 4.4rem;
+  height: 4.4rem;
+  margin: 0 auto;
 
-    border: 1px #282828 solid;
-    border-radius: 50%;
-    background-color: #1d1d1d;
+  transition: all .08s ease-in-out;
 
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  border: 1px #282828 solid;
+  //border: 1px #458554 dashed;
+  border-radius: 50%;
+  background-color: #1d1d1d;
 }
 
-div.timenote__logotype div.icon {
-    width: 75%;
-    height: 75%;
-    margin: 0 0 5% 0;
 
-    transition: all .08s ease;
+.logotype-btn__icon {
+  width: 60%;
+  height: 60%;
+  margin: 20% auto;
 
-    fill: #333;
+  fill: @icon-light;
 }
 
-div.timenote__logotype:hover {
-    cursor: pointer;
-    transform: scale(1.2);
+//.logotype-btn:hover {
+//  cursor: pointer;
+//  transform: scale(1.15);
+//}
+
+.expand-controls {
+  position: relative;
+  top: 10px;
+
+  width: 55%;
+  height: 20%;
+  //border: 1px #fdff87 dashed;
+  margin: 2px auto 0;
+
+  transition: all .15s ease;
+
+  fill: @implicit-tone;
 }
 
-div.timenote__title {
-    text-align: center;
+.expand-controls:hover {
+  cursor: pointer;
 
-    color: @normal-title-light;
+  fill: @implicit-tone-hover-blue;
+}
 
-    font-size: 2.25rem;
-    font-weight: 100;
+.timernote-title {
+  width: calc(100% - @timer-state-info);
+  margin: 10px 0 0 0;
+
+  text-align: center;
+  white-space: nowrap;
+
+  color: @normal-title-light;
+
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.timer-state-info {
+  position: absolute;
+  right: 0;
+
+  width: @timer-state-info;
+  height: 100%;
+  //background: chocolate;
+}
+
+.timer-state-info__cycle-state {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+
+  margin: calc(-25% - 1px) 0 0 0;
+
+  text-align: center;
+
+  color: @cycle-state-text;
+
+  font-size: 1em;
+  //background: darkslateblue;
+}
+
+
+.controls-secondary .dragger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 40px;
+  height: 40px;
+  margin: -27% 0 0 -27%;
+
+  transition: all .15s ease;
+
+  fill: @implicit-tone;
+  //background-color: #3e2e36;
+}
+
+.controls-secondary .dragger:hover {
+  cursor: pointer;
+
+  fill: @implicit-tone-hover-blue;
+}
+
+
+.progress-bar-total {
+  width: calc(100% - @timer-state-info);
+  height: 6px;
+  margin: 5px 0 0 0;
+
+  border-radius: 5px;
+  background-color: @progress-bar-inactive;
+}
+
+.progress-bar-total_active {
+  width: 23%;
+  height: 6px;
+
+  transition: all .5s ease;
+
+  border-radius: 5px;
+  background-color: @progress-bar-blue;
+}
+
+
+.progress-bar-info {
+  display: flex;
+
+  width: calc(100% - @timer-state-info);
+  margin: 8px 0 0 0;
+
+  font-size: 1.05rem;
+  font-weight: 300;
+
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.progress-bar-info__time-passed {
+  color: @time-passed-text;
+}
+
+.progress-bar-info__time-await {
+  color: @time-await-text;
 }
