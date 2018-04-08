@@ -9,7 +9,7 @@ export default class Timernote extends Component {
     const { title } = this.props.timernote;
 
     return (
-      <section className="timernote timernote_dark-theme">
+      <section className="timernote">
 
         <div className="controls-primary">
           <div className="logotype-btn">

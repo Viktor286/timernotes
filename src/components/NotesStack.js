@@ -22,7 +22,7 @@ class NotesStack extends Component {
 
   render() {
     return (
-      <section className="timenotes-stack">
+      <section className="timernotes-stack timernotes-stack_dark-theme">
         {this.renderStack()}
       </section>
     );

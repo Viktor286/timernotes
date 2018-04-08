@@ -11,8 +11,12 @@
 
 @icon-gray: #333;
 @icon-light: #4b4b4b;
+@icon-bright: #878787;
 @progress-bar-inactive: #343434;
 @progress-bar-blue: #60a2ed;
+
+@dark-background: #121212;
+@dark-background-light: #171717;
 
 @implicit-tone: #232323;
 @implicit-tone-hover-blue: #2b3240;
@@ -31,6 +35,10 @@ section.timernote {
   border-radius: 5px;
   background: @dark-background;
 }
+
+//section.timernote:hover{
+//  background: @dark-background-light;
+//}
 
 //section.timernote:hover{
 //  transform: scale(1.035);
@@ -83,21 +91,41 @@ section.timernote {
   //border: 1px #458554 dashed;
   border-radius: 50%;
   background-color: #1d1d1d;
+  cursor: pointer;
 }
-
 
 .logotype-btn__icon {
   width: 60%;
   height: 60%;
   margin: 20% auto;
-
   fill: @icon-light;
+
 }
 
-//.logotype-btn:hover {
-//  cursor: pointer;
-//  transform: scale(1.15);
+.logotype-btn .logotype-btn__icon svg path{
+  transition: all .1s ease-in-out;
+}
+
+.logotype-btn:hover .logotype-btn__icon svg path{
+  fill: @icon-bright;
+}
+
+.logotype-btn:hover{
+  border: 1px #444 solid;
+  //box-shadow: 0 0 25px #4d4d4d;
+}
+
+//.logotype-btn:hover::before {
+//  transform: scale(1.1);
+//  box-shadow: 0 0 15px #ffee10;
 //}
+
+//.logotype-btn:hover {
+//  box-shadow: 0 0 15px #ffee10;
+//  fill: #ffee10;
+//  text-shadow: 0 0 15px #ffee10;
+//}
+
 
 .expand-controls {
   position: relative;
